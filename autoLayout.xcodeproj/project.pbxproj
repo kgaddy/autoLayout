@@ -24,6 +24,7 @@
 		4BAE5E43191805D400CA24DC /* IScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE5E42191805D400CA24DC /* IScrollViewController.m */; };
 		4BAE5E461918241600CA24DC /* ITestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE5E451918241500CA24DC /* ITestView.m */; };
 		4BAE5E49191878DE00CA24DC /* UIColor+autoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE5E48191878DE00CA24DC /* UIColor+autoLayout.m */; };
+		4BAE5E521919657B00CA24DC /* ISideBySideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE5E511919657B00CA24DC /* ISideBySideViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		4BAE5E451918241500CA24DC /* ITestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITestView.m; sourceTree = "<group>"; };
 		4BAE5E47191878DE00CA24DC /* UIColor+autoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+autoLayout.h"; sourceTree = "<group>"; };
 		4BAE5E48191878DE00CA24DC /* UIColor+autoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+autoLayout.m"; sourceTree = "<group>"; };
+		4BAE5E501919657B00CA24DC /* ISideBySideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISideBySideViewController.h; sourceTree = "<group>"; };
+		4BAE5E511919657B00CA24DC /* ISideBySideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISideBySideViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,18 +124,10 @@
 		4BAE5E11191805AA00CA24DC /* autoLayout */ = {
 			isa = PBXGroup;
 			children = (
-				4BAE5E40191805B500CA24DC /* ScrollView */,
-				4BAE5E1A191805AA00CA24DC /* IAppDelegate.h */,
-				4BAE5E1B191805AA00CA24DC /* IAppDelegate.m */,
+				4BAE5E4A19193D1700CA24DC /* Classes */,
 				4BAE5E1D191805AA00CA24DC /* Main.storyboard */,
-				4BAE5E20191805AA00CA24DC /* IViewController.h */,
-				4BAE5E21191805AA00CA24DC /* IViewController.m */,
 				4BAE5E23191805AA00CA24DC /* Images.xcassets */,
 				4BAE5E12191805AA00CA24DC /* Supporting Files */,
-				4BAE5E441918241500CA24DC /* ITestView.h */,
-				4BAE5E451918241500CA24DC /* ITestView.m */,
-				4BAE5E47191878DE00CA24DC /* UIColor+autoLayout.h */,
-				4BAE5E48191878DE00CA24DC /* UIColor+autoLayout.m */,
 			);
 			path = autoLayout;
 			sourceTree = "<group>";
@@ -173,6 +168,64 @@
 				4BAE5E42191805D400CA24DC /* IScrollViewController.m */,
 			);
 			name = ScrollView;
+			sourceTree = "<group>";
+		};
+		4BAE5E4A19193D1700CA24DC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4BAE5E4E19193D7D00CA24DC /* Categories */,
+				4BAE5E4D19193D6A00CA24DC /* Views */,
+				4BAE5E4C19193D4800CA24DC /* Controllers */,
+				4BAE5E4B19193D3700CA24DC /* Application */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		4BAE5E4B19193D3700CA24DC /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				4BAE5E1A191805AA00CA24DC /* IAppDelegate.h */,
+				4BAE5E1B191805AA00CA24DC /* IAppDelegate.m */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		4BAE5E4C19193D4800CA24DC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4BAE5E4F1919653D00CA24DC /* SideBySide */,
+				4BAE5E40191805B500CA24DC /* ScrollView */,
+				4BAE5E20191805AA00CA24DC /* IViewController.h */,
+				4BAE5E21191805AA00CA24DC /* IViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4BAE5E4D19193D6A00CA24DC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4BAE5E441918241500CA24DC /* ITestView.h */,
+				4BAE5E451918241500CA24DC /* ITestView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4BAE5E4E19193D7D00CA24DC /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				4BAE5E47191878DE00CA24DC /* UIColor+autoLayout.h */,
+				4BAE5E48191878DE00CA24DC /* UIColor+autoLayout.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		4BAE5E4F1919653D00CA24DC /* SideBySide */ = {
+			isa = PBXGroup;
+			children = (
+				4BAE5E501919657B00CA24DC /* ISideBySideViewController.h */,
+				4BAE5E511919657B00CA24DC /* ISideBySideViewController.m */,
+			);
+			name = SideBySide;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BAE5E1C191805AA00CA24DC /* IAppDelegate.m in Sources */,
+				4BAE5E521919657B00CA24DC /* ISideBySideViewController.m in Sources */,
 				4BAE5E43191805D400CA24DC /* IScrollViewController.m in Sources */,
 				4BAE5E22191805AA00CA24DC /* IViewController.m in Sources */,
 				4BAE5E18191805AA00CA24DC /* main.m in Sources */,
@@ -483,6 +537,7 @@
 				4BAE5E3C191805AA00CA24DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4BAE5E3D191805AA00CA24DC /* Build configuration list for PBXNativeTarget "autoLayoutTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +546,7 @@
 				4BAE5E3F191805AA00CA24DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
