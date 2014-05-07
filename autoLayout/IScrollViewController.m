@@ -58,9 +58,8 @@
 
 -(ITestView *)testBlockOne {
     if (!_testBlockOne) {
-        _testBlockOne = [[ITestView alloc]initWithTitle:@"BLock One"];
-        _testBlockOne.backgroundColor = [UIColor hitched];
-   
+        _testBlockOne = [[ITestView alloc]initWithTitleAndColor:@"One" color:[UIColor hitched]];
+       
         [_testBlockOne setTranslatesAutoresizingMaskIntoConstraints:NO];
     }
     return _testBlockOne;
@@ -68,8 +67,8 @@
 
 -(ITestView *)testBlockTwo {
     if (!_testBlockTwo) {
-        _testBlockTwo = [[ITestView alloc]initWithTitle:@"BLock Two"];
-        _testBlockTwo.backgroundColor = [UIColor liptonYellow];
+        _testBlockTwo = [[ITestView alloc]initWithTitleAndColor:@"One" color:[UIColor redColor]];
+   
         
         [_testBlockTwo setTranslatesAutoresizingMaskIntoConstraints:NO];
     }

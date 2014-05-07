@@ -16,13 +16,16 @@
 
 @implementation ITestView
 
-- (id)initWithTitle:(NSString *)title
+- (id)initWithTitleAndColor:(NSString *)title color:(UIColor *)color
 {
     self = [super init];
     if (self) {
         self.viewTitle = title;
         [self addSubview:self.myViewTitleLabel];
+        self.layer.borderColor = [UIColor redColor].CGColor;
+        self.layer.borderWidth = 3.0f;
         [self addConstraints];
+        [self setBackgroundColor:color];
     }
     return self;
 }
@@ -32,7 +35,7 @@
         _myViewTitleLabel = [[UILabel alloc]init];
         _myViewTitleLabel.numberOfLines = 0;
         _myViewTitleLabel.textColor = [UIColor blackColor];
-        _myViewTitleLabel.backgroundColor = [UIColor clearColor];
+       // _myViewTitleLabel.backgroundColor = [UIColor clearColor];
         [_myViewTitleLabel setFont:[UIFont systemFontOfSize:12.0]];
         _myViewTitleLabel.text = self.viewTitle;
         [_myViewTitleLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -44,9 +47,6 @@
 - (NSMutableDictionary *)metrics {
     if (!_metrics) {
         _metrics = [[NSMutableDictionary alloc]init];
-        
-
-        
     }
     
     return _metrics;
@@ -56,9 +56,7 @@
     if (!_views) {
         _views = [[NSMutableDictionary alloc]init];
         [_views setObject:self.myViewTitleLabel forKey:@"myViewTitleLabel"];
-        
     }
-    
     return _views;
 }
 

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ITestView : UIView
-- (id)initWithTitle:(NSString *)title;
+- (id)initWithTitleAndColor:(NSString *)title color:(UIColor *)color;
 @end
