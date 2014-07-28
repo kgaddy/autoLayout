@@ -38,22 +38,11 @@
 -(UIScrollView *)scrollView {
     if (!_scrollView) {
         _scrollView = [[UIScrollView alloc]init];
-        [_scrollView setContentSize:CGSizeMake(300, 900)];
-        [_scrollView addSubview:self.contentView];
+        [_scrollView addSubview:self.testBlockOne];
+        [_scrollView addSubview:self.testBlockTwo];
         [_scrollView setTranslatesAutoresizingMaskIntoConstraints:NO];
     }
     return _scrollView;
-}
-
--(UIView *)contentView {
-    if (!_contentView) {
-        _contentView = [[UIView alloc]init];
-        _contentView.backgroundColor = [UIColor whiteColor];
-        [_contentView addSubview:self.testBlockOne];
-        [_contentView addSubview:self.testBlockTwo];
-        [_contentView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    }
-    return _contentView;
 }
 
 -(ITestView *)testBlockOne {
@@ -88,8 +77,6 @@
         [_metrics setObject:@14 forKey:@"blockHeight"];
         [_metrics setObject:@6 forKey:@"blockSpacing"];
         
-        //This is the height of testBlockOne and testBlockTwo views
-        [_metrics setObject:@900 forKey:@"contentHeight"];
         
     }
     
@@ -102,7 +89,6 @@
         [_views setObject:self.testBlockOne forKey:@"testBlockOne"];
         [_views setObject:self.testBlockTwo forKey:@"testBlockTwo"];
         [_views setObject:self.scrollView forKey:@"scrollView"];
-        [_views setObject:self.contentView forKey:@"contentView"];
         
     }
     
@@ -113,12 +99,9 @@
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[scrollView]|" options:0 metrics:self.metrics views:self.views]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[scrollView]|" options:0 metrics:self.metrics views:self.views]];
     
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[contentView(320)]|" options:0 metrics:nil views:self.views]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[contentView(contentHeight)]|" options:0 metrics:self.metrics views:self.views]];
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[testBlockOne(320)]|" options:0 metrics:nil views:self.views]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[testBlockTwo(320)]|" options:0 metrics:nil views:self.views]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[testBlockOne(200)][testBlockTwo(700)]" options:0 metrics:nil views:self.views]];
+    [self.scrollView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[testBlockOne(320)]|" options:0 metrics:nil views:self.views]];
+    [self.scrollView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[testBlockTwo(320)]|" options:0 metrics:nil views:self.views]];
+    [self.scrollView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[testBlockOne(200)][testBlockTwo(700)]|" options:0 metrics:nil views:self.views]];
 }
 
 @end

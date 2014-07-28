@@ -62,11 +62,7 @@
     for (int i = 1; i <= count; i++)
     {
         ITestView *tView = [[ITestView alloc]initWithTitleAndColor:[NSString stringWithFormat:@"%d", i] color:[UIColor hitched]];
-        //UIView *tView = [[UIView alloc]init];
         [tView setTranslatesAutoresizingMaskIntoConstraints:NO];
-        //[tView setBackgroundColor:[UIColor redColor]];
-        //[tView setAlpha:0.3];
-        //tView.backgroundColor = [UIColor greenColor];
         [tView setTag:i];
         [self.letterViews addObject:tView];
         [self.container addSubview:tView];
@@ -133,7 +129,7 @@
         
         //pin the first view to the left edge
         [self.letterConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(>=10@450)-[firstView]" options:0 metrics:nil views:firstLastViews]];
-        //pin the last view to the right edge with padding of at least 20 and a priority of 450
+        //pin the last view to the right edge with padding of at least 10 and a priority of 450
         [self.letterConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[lastView]-(>=10@450)-|" options:0 metrics:nil views:firstLastViews]];
         
         //constraint that says the letter is the same height to the container
@@ -174,8 +170,6 @@
             [self.letterConstraints addObject:heightConstraint];
             [self.letterConstraints addObject:centerConstraint];
             
-            
-            
             if(previousView) {
                 NSDictionary *tempViews = NSDictionaryOfVariableBindings(previousView,lview);
                 
@@ -183,7 +177,6 @@
                 [self.letterConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[previousView]-10-[lview]" options:0 metrics:nil views:tempViews]];
                 
                 [self.letterConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[previousView(==lview)]" options:0 metrics:nil views:tempViews]];
-                
                 
             }
             previousView = lview;
@@ -193,7 +186,7 @@
     }
 }
 -(void)addConstraints{
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-5-[container(310)]-5-|" options:0 metrics:nil views:self.views]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-5-[container]-5-|" options:0 metrics:nil views:self.views]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[numTextField]-|" options:0 metrics:nil views:self.views]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[numButton]-|" options:0 metrics:nil views:self.views]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-80-[container(60)]-[numTextField(40)]-[numButton(46)]" options:0 metrics:nil views:self.views]];
