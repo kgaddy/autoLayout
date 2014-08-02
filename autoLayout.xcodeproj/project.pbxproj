@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B92FBC8198D6054003969EE /* ITableViewDynamicHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B92FBC7198D6054003969EE /* ITableViewDynamicHeightViewController.m */; };
+		4B92FBCC198D6100003969EE /* IDynamicHeightCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B92FBCB198D6100003969EE /* IDynamicHeightCellView.m */; };
 		4BAE5E0C191805AA00CA24DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BAE5E0B191805AA00CA24DC /* Foundation.framework */; };
 		4BAE5E0E191805AA00CA24DC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BAE5E0D191805AA00CA24DC /* CoreGraphics.framework */; };
 		4BAE5E10191805AA00CA24DC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BAE5E0F191805AA00CA24DC /* UIKit.framework */; };
@@ -38,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B92FBC6198D6054003969EE /* ITableViewDynamicHeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITableViewDynamicHeightViewController.h; sourceTree = "<group>"; };
+		4B92FBC7198D6054003969EE /* ITableViewDynamicHeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITableViewDynamicHeightViewController.m; sourceTree = "<group>"; };
+		4B92FBCA198D6100003969EE /* IDynamicHeightCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDynamicHeightCellView.h; sourceTree = "<group>"; };
+		4B92FBCB198D6100003969EE /* IDynamicHeightCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDynamicHeightCellView.m; sourceTree = "<group>"; };
 		4BAE5E08191805AA00CA24DC /* autoLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = autoLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BAE5E0B191805AA00CA24DC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4BAE5E0D191805AA00CA24DC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -91,6 +97,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B92FBC5198D602C003969EE /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				4B92FBC9198D605A003969EE /* views */,
+				4B92FBC6198D6054003969EE /* ITableViewDynamicHeightViewController.h */,
+				4B92FBC7198D6054003969EE /* ITableViewDynamicHeightViewController.m */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
+		4B92FBC9198D605A003969EE /* views */ = {
+			isa = PBXGroup;
+			children = (
+				4B92FBCA198D6100003969EE /* IDynamicHeightCellView.h */,
+				4B92FBCB198D6100003969EE /* IDynamicHeightCellView.m */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
 		4BAE5DFF191805A900CA24DC = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +218,7 @@
 		4BAE5E4C19193D4800CA24DC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4B92FBC5198D602C003969EE /* TableView */,
 				4BAE5E4F1919653D00CA24DC /* SideBySide */,
 				4BAE5E40191805B500CA24DC /* ScrollView */,
 				4BAE5E20191805AA00CA24DC /* IViewController.h */,
@@ -326,9 +352,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B92FBCC198D6100003969EE /* IDynamicHeightCellView.m in Sources */,
 				4BAE5E1C191805AA00CA24DC /* IAppDelegate.m in Sources */,
 				4BAE5E521919657B00CA24DC /* ISideBySideViewController.m in Sources */,
 				4BAE5E43191805D400CA24DC /* IScrollViewController.m in Sources */,
+				4B92FBC8198D6054003969EE /* ITableViewDynamicHeightViewController.m in Sources */,
 				4BAE5E22191805AA00CA24DC /* IViewController.m in Sources */,
 				4BAE5E18191805AA00CA24DC /* main.m in Sources */,
 				4BAE5E49191878DE00CA24DC /* UIColor+autoLayout.m in Sources */,

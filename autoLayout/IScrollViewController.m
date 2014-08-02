@@ -29,7 +29,9 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	[self.view addSubview:self.scrollView];
-
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
 	[self addConstraints];
 }
 
@@ -64,9 +66,7 @@
 	if (!_metrics) {
 		_metrics = [[NSMutableDictionary alloc]init];
 
-		if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
-			self.edgesForExtendedLayout = UIRectEdgeNone;
-		}
+
 	}
 
 	return _metrics;
